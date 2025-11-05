@@ -5,8 +5,12 @@ import { RouterOutlet } from '@angular/router';
   selector: 'app-root',
   imports: [RouterOutlet],
   templateUrl: './app.html',
-  styleUrl: './app.scss'
+  styleUrl: './app.scss',
 })
 export class App {
   protected readonly title = signal('otg-web-angular');
+
+  logMessage() {
+    console.log('App component initialized with title:', this.title());
+  }
 }

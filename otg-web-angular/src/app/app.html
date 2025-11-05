@@ -1,3 +1,12 @@
 <h1>{{ title() }}</h1>
-<div class>It works!</div>
-<button class="btn btn-primary" type="button">Test</button>
+<p>
+  Announcements
+  <span class="badge bg-success rounded-pill">3</span>
+</p>
+<div class="list-group col-3 p-3">
+  <a href="#" class="active list-group-item list-group-item-action">Chocolate</a>
+  <a href="#" class="list-group-item-danger list-group-item list-group-item-action">Strawberry</a>
+  <a href="#" class="list-group-item list-group-item-action">Vanila</a>
+  <a href="#" class="disabled list-group-item list-group-item-action">Cookies and Cream</a>
+</div>
+<button class="btn btn-primary" type="button" (click)="logMessage()">Log Message</button>
