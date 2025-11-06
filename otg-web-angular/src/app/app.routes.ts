@@ -15,4 +15,8 @@ export const routes: Routes = [
     loadComponent: () =>
       import('./page/products/products.component').then((m) => m.ProductsComponent),
   },
+  {
+    path: 'survey',
+    loadComponent: () => import('./survey/survey.component').then((m) => m.SurveyComponent),
+  },
 ];
