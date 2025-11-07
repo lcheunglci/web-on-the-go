@@ -1,7 +1,7 @@
 <p>survey works!</p>
 
 <form>
-  <fieldset>
+  <fieldset disabled>
     <div class="mb-3">
       <label class="form-label" for="email"></label>
       <input class="form-control-plaintext" type="email" id="email" placeholder="Enter text here" />
@@ -15,17 +15,38 @@
       </select>
     </div>
     <div class="mb-3">
-      <div class="form-check">
+      <div class="form-check form-switch form-check-inline">
         <input class="form-check-input" type="checkbox" name="preferences" id="p1" />
         <label class="form-check-label" for="p1">Green</label>
+      </div>
+      <div class="form-check form-switch form-check-inline">
         <input class="form-check-input" type="checkbox" name="preferences" id="p2" />
         <label class="form-check-label" for="p2">Red</label>
       </div>
     </div>
+    <div class="mb-3">
+      <div class="input-group">
+        <label for="group">Cost</label>
+        <span class="input-group-text">$</span>
+        <input class="form-control" type="text" name="group" id="group" />
+      </div>
+    </div>
+    <div class="mb-3">
+      <div class="form-file">
+        <input type="file" class="form-file-input" id="upload" />
+        <label class="form-file-label" for="upload">
+          <span class="form-file-text">Upload a File</span>
+          <span class="form-file-button">Upload</span>
+        </label>
+      </div>
+    </div>
+    <div class="mb-3">
+      <label for="rating">Rating</label>
+      <input class="form-range" type="range" id="rating" min="0" max="10" />
+    </div>
+    <div class="mb-3">
+      <label for="color">Color</label>
+      <input type="color" name="color" id="color" class="form-control form-control-color" />
+    </div>
   </fieldset>
 </form>
-
-<div class="mb-4 input-group">
-  <span class="input-group-text">$</span>
-  <input type="text" class="form-control" />
-</div>
