@@ -1,15 +1,9 @@
 
 <ul class="nav flex-column">
-  <li class="nav-item">
-    <a class="nav-link active" aria-current="page" href="#">Active</a>
+  @for (item of items()) {
+    <li class="nav-item"><a class="nav-link active" aria-current="page" href="item">{{ item }}</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" href="#">Link</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-  </li>
+  } @empty {
+    <li>No items to display.</li>
+  }
 </ul>
