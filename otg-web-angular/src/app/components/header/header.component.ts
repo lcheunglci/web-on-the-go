@@ -8,4 +8,5 @@ import { Component, input } from '@angular/core';
 })
 export class HeaderComponent {
     showLogo = input(true);
+    bannerLogoImg = input("");
 }
