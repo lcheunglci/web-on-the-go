@@ -8,4 +8,5 @@ import { Component, input } from '@angular/core';
 })
 export class FooterComponent {
     showSiteMap = input(false);
+    const year = new Date().getFullYear();
 }
