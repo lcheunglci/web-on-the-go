@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-loading',
@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
   styleUrl: './loading.component.scss',
 })
 export class LoadingComponent {
-  @Input() percentage: number = 0;
+  percentage = input(0);
 }
