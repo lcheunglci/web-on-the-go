@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './welcome.component.scss',
 })
 export class WelcomeComponent {
-
+  protected readonly welcomeMsg = "Welcome to Web on the go!";
 }
