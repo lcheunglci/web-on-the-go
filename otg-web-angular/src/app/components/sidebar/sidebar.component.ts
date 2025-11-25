@@ -7,5 +7,5 @@ import { Component, input } from '@angular/core';
   styleUrl: './sidebar.component.scss',
 })
 export class SidebarComponent {
-  items = input<strong[]>([]);
+  items = input<string[]>([]);
 }
