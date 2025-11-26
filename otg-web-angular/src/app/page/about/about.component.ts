@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './about.component.scss',
 })
 export class AboutComponent {
-
+  protected readonly content = "A short summary about us";
 }
