@@ -8,4 +8,5 @@ import { Component, input } from '@angular/core';
 })
 export class LoadingComponent {
   percentage = input(0);
+  loadingText = input("Loading...");
 }
