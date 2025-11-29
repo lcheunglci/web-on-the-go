@@ -7,6 +7,6 @@ import { Component, input } from '@angular/core';
   styleUrl: './footer.component.scss',
 })
 export class FooterComponent {
-    showSiteMap = input(false);
-    const year = new Date().getFullYear();
+  showSiteMap = input(false);
+  protected readonly year = new Date().getFullYear();
 }

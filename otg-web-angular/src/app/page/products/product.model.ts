@@ -1,4 +1,4 @@
-class Product {
+interface Product {
   name: string;
   price: number;
 }

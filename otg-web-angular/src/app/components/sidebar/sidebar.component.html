@@ -1,9 +1,9 @@
-
 <ul class="nav flex-column">
-  @for (item of items()) {
-    <li class="nav-item"><a class="nav-link active" aria-current="page" href="item">{{ item }}</a>
+  @for (item of items(); track item.name ) {
+  <li class="nav-item">
+    <a class="nav-link active" aria-current="page" href="item">{{ item }}</a>
   </li>
   } @empty {
-    <li>No items to display.</li>
+  <li>No items to display.</li>
   }
 </ul>
