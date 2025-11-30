@@ -1,8 +1,9 @@
 import { Component, input } from '@angular/core';
+import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
   selector: 'app-card',
-  imports: [],
+  imports: [RouterLink, RouterLinkActive],
   templateUrl: './card.component.html',
   styleUrl: './card.component.scss',
 })
@@ -13,5 +14,6 @@ export class CardComponent {
   subtitle = input('');
   message = input('');
   link = input('');
+  linkText = input('');
   img = input('');
 }
