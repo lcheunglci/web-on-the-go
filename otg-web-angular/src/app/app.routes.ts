@@ -19,4 +19,8 @@ export const routes: Routes = [
     path: 'survey',
     loadComponent: () => import('./page/survey/survey.component').then((m) => m.SurveyComponent),
   },
+  {
+    path: 'cart',
+    loadComponent: () => import('./page/cart/cart.component').then((m) => m.CartComponent),
+  },
 ];
