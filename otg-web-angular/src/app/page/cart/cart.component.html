@@ -1,1 +1,22 @@
-<p>cart works!</p>
+<div class="container">
+  @for (item of cartItems; track item.id) {
+  <div class="cart-item">
+    <div class="cart-item details-wrapper">
+      <p class="cart-item-name">
+        {{ item.name }}
+      </p>
+    </div>
+    <div class="cart-item-price-wrapper">
+      <p class="cart-item-price">
+        {{ item.price }}
+      </p>
+    </div>
+  </div>
+  } @if (!cartItems.length) {
+  <div class="cart-item">
+    <div class="cart-item-details-wrapper">
+      <p class="cart-item-name">Go add some items to your cart</p>
+    </div>
+  </div>
+  }
+</div>

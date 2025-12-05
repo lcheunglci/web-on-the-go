@@ -7,5 +7,5 @@ import { Component } from '@angular/core';
   styleUrl: './cart.component.scss',
 })
 export class CartComponent {
-
+  cartItems: { id: number; name: string; quantity: number; price: number }[] = [];
 }
