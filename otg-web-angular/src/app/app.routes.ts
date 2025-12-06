@@ -16,6 +16,13 @@ export const routes: Routes = [
       import('./page/products/products.component').then((m) => m.ProductsComponent),
   },
   {
+    path: 'products/:id',
+    loadComponent: () =>
+      import('./page/products/product-detail/product-detail.component').then(
+        (m) => m.ProductDetailComponent
+      ),
+  },
+  {
     path: 'survey',
     loadComponent: () => import('./page/survey/survey.component').then((m) => m.SurveyComponent),
   },
