@@ -1,1 +1,7 @@
-<p>cart-button works!</p>
+<div class="quantity-selector-wrapper">
+  <div class="quantity-selector">
+    <button (click)="cartService.decrementCartItem(item().id)">-</button>
+    <span>{{ item().quantity }}</span>
+    <button (click)="cartService.addCartItem(item().id)">+</button>
+  </div>
+</div>

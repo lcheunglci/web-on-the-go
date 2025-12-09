@@ -1,14 +1,14 @@
-import { Injectable } from '@angular/core';
+import { Injectable, signal } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
   // TODO: readonly
-  userCartItems: Record<string, { quantity: number }> = {};
+  userCartItems = signal<Record<string, { quantity: number }>>({});
 
   addCartItem(id: string) {
-    const cartItems: Record<string, { quantity: number }> = this.userCartItems;
+    const cartItems: Record<string, { quantity: number }> = this.userCartItems();
     const updatedCart = {
       ...cartItems,
       [id]: {
@@ -16,11 +16,11 @@ export class CartService {
       },
     };
 
-    this.userCartItems = updatedCart;
+    this.userCartItems.set(updatedCart);
   }
 
   decrementCartItem(id: string) {
-    const cartItems: Record<string, { quantity: number }> = this.userCartItems;
+    const cartItems: Record<string, { quantity: number }> = this.userCartItems();
 
     const updatedQuantity = (cartItems[id].quantity || 0) - 1;
 
@@ -30,6 +30,6 @@ export class CartService {
       delete cartItems[id];
     }
 
-    this.userCartItems = cartItems;
+    this.userCartItems.set({ ...cartItems });
   }
 }
