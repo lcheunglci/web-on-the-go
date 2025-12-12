@@ -1,1 +1,26 @@
-<p>login works!</p>
+<p>Please enter your credentials to log in.</p>
+<fieldset>
+  <form #loginForm="ngForm">
+    <label for="userName">User Name</label>
+    <input
+      type="text"
+      id="userName"
+      name="userName"
+      [(ngModel)]="model.userName"
+      value=""
+      required
+      #userName="ngModel"
+    />
+    <label for="password">Password</label>
+    <input
+      type="password"
+      id="password"
+      name="password"
+      [(ngModel)]="model.password"
+      value=""
+      required
+      #password="ngModel"
+    />
+    <button type="submit" (click)="login(model.userName)">Login</button>
+  </form>
+</fieldset>
