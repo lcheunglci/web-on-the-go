@@ -1,3 +1,9 @@
+@let user = this.authService.authenticatedUser.value(); @if(user){
+<h3>Welcome Back, {{ user?.name }}</h3>
+<p>You are logged in!</p>
+<button mat-raised-button (click)="authService.logout()">Log Out</button>
+} @else {
+
 <p>Please enter your credentials to log in.</p>
 <fieldset>
   <form #loginForm="ngForm">
@@ -24,3 +30,4 @@
     <button type="submit" (click)="login(model.userName)">Login</button>
   </form>
 </fieldset>
+}
