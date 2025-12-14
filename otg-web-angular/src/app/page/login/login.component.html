@@ -1,9 +1,12 @@
-@let user = this.authService.authenticatedUser.value(); @if(user){
+@let userId = this.authService.userId(); @let error = this.authService.loginError(); @if (error) {
+<h3>Error</h3>
+<p>There was an issue with your login. Please try again.</p>
+<button (click)="authService.logout()">Logout</button>
+} @else if (userId) { @let user = this.authService.authenticatedUser.value(); @if(user){
 <h3>Welcome Back, {{ user?.name }}</h3>
 <p>You are logged in!</p>
 <button mat-raised-button (click)="authService.logout()">Log Out</button>
-} @else {
-
+} } @else {
 <p>Please enter your credentials to log in.</p>
 <fieldset>
   <form #loginForm="ngForm">
