@@ -1,11 +1,18 @@
-import { Injectable, signal } from '@angular/core';
+import { inject, Injectable, linkedSignal, signal } from '@angular/core';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  // TODO: readonly
-  userCartItems = signal<Record<string, { quantity: number }>>({});
+  readonly authService = inject(AuthService);
+
+  readonly userCartItems = linkedSignal(() => {
+    if (this.authService.userId()) {
+      return this.authService.authenticatedUser.value()?.cart ?? {};
+    }
+    return {};
+  });
 
   addCartItem(id: string) {
     const cartItems: Record<string, { quantity: number }> = this.userCartItems();
@@ -17,6 +24,11 @@ export class CartService {
     };
 
     this.userCartItems.set(updatedCart);
+
+    this.authService.updateUserCart({
+      ...cartItems,
+      [id]: { quantity: cartItems[id]?.quantity ? cartItems[id].quantity + 1 : 1 },
+    });
   }
 
   decrementCartItem(id: string) {
@@ -31,5 +43,6 @@ export class CartService {
     }
 
     this.userCartItems.set({ ...cartItems });
+    this.authService.updateUserCart({ ...cartItems });
   }
 }

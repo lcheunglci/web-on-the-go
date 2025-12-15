@@ -39,4 +39,14 @@ export class AuthService {
     this.userId.set(undefined);
     this.loginError.set(false);
   }
+
+  updateUserCart(cart: Record<string, { quantity: number }>): void {
+    if (this.userId()) {
+      const user = this.authenticatedUser.value();
+      if (user) {
+        user.cart = cart;
+        this.authenticatedUser.set(user);
+      }
+    }
+  }
 }
