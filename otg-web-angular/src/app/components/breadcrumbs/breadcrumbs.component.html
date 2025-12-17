@@ -1,0 +1,10 @@
+<div class="button-row">
+  <button>Home</button>
+  <span>>></span>
+  <button>{{ route() }}</button>
+  @if(route() === 'Shop') { @if (this.productService.selectedProductId();) { @let selectedProduct =
+  this.productService.selectedProduct.value(); @if(selectedProduct){
+  <span>>></span>
+  <button>{{ selectedProduct.title }}</button>
+  } } }
+</div>
