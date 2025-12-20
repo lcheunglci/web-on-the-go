@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { isUserAuthenticatedCanMatchGuard } from './is-user-authenticated-can-match-guard';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: 'full' },
@@ -29,6 +30,12 @@ export const routes: Routes = [
   {
     path: 'cart',
     loadComponent: () => import('./page/cart/cart.component').then((m) => m.CartComponent),
+  },
+  {
+    path: 'my-account',
+    canMatch: [isUserAuthenticatedCanMatchGuard],
+    loadComponent: () =>
+      import('./page/my-account/my-account.component').then((m) => m.MyAccountComponent),
   },
   {
     path: '**',
