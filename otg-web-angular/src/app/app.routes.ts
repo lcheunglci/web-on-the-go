@@ -38,6 +38,12 @@ export const routes: Routes = [
       import('./page/my-account/my-account.component').then((m) => m.MyAccountComponent),
   },
   {
+    path: 'my-orders',
+    canMatch: [isUserAuthenticatedCanMatchGuard],
+    loadComponent: () =>
+      import('./page/my-orders/my-orders.component').then((m) => m.MyOrdersComponent),
+  },
+  {
     path: '**',
     loadComponent: () =>
       import('./page/not-found/not-found.component').then((m) => m.NotFoundComponent),
