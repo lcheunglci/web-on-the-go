@@ -1,1 +1,32 @@
-export const PRODUCTS: Product[] = [];
+export const PRODUCTS: Product[] = [
+  {
+    name: 'Gamepad',
+    image: '../../assets/images/gamepad1.png',
+    thumb: '../../assets/images/gamepad1-thumb.png',
+    title: 'Gamepad 001',
+    price: 50,
+    description: 'A controller for games',
+    id: 'gp01',
+    quantity: 1,
+  },
+  {
+    name: 'Gamepad',
+    image: '../../assets/images/gamepad2.png',
+    thumb: '../../assets/images/gamepad2-thumb.png',
+    title: 'Gamepad 002',
+    price: 80,
+    description: 'A newer controller for games',
+    id: 'gp02',
+    quantity: 1,
+  },
+  {
+    name: 'GameConsole',
+    image: '../../assets/images/game-console1.png',
+    thumb: '../../assets/images/game-console1-thumb.png',
+    title: 'Game Console 001',
+    price: 300,
+    description: 'A new game console',
+    id: 'gc01',
+    quantity: 1,
+  },
+];
