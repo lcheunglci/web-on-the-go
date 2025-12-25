@@ -44,6 +44,10 @@ export const routes: Routes = [
       import('./page/my-orders/my-orders.component').then((m) => m.MyOrdersComponent),
   },
   {
+    path: 'contact',
+    loadComponent: () => import('./page/contact/contact.component').then((m) => m.ContactComponent),
+  },
+  {
     path: '**',
     loadComponent: () =>
       import('./page/not-found/not-found.component').then((m) => m.NotFoundComponent),
