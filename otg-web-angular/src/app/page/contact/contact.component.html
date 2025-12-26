@@ -1,1 +1,27 @@
-<p>contact works!</p>
+<h3>Contact Us</h3>
+<p>Please fill out the form elow to let us know how we can help</p>
+
+<fieldset>
+  <form #contactForm="ngForm">
+    <div class="form-group">
+      <label for="full_name">Full name</label>
+      <input type="text" name="fullName" id="full_name" value="" required #fullName="ngModel" />
+
+      @if (fullName.invalid && fullName.touched) {
+      <div class="alert alert-danger">Name is required</div>
+      }
+    </div>
+
+    <button
+      [disabled]="contactForm.invalid"
+      class="btn btn-primary"
+      type="submit"
+      name="submit"
+      id="submit"
+      (click)="submitForm(model)"
+    >
+      Submit
+    </button>
+    <button type="button" class="btn btn-danger" (click)="clearForm()">Cancel</button>
+  </form>
+</fieldset>
