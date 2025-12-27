@@ -5,10 +5,62 @@
   <form #contactForm="ngForm">
     <div class="form-group">
       <label for="full_name">Full name</label>
-      <input type="text" name="fullName" id="full_name" value="" required #fullName="ngModel" />
+      <input
+        type="text"
+        name="fullName"
+        id="full_name"
+        value=""
+        required
+        [(ngModel)]="fullName"
+        #fullName="ngModel"
+      />
 
       @if (fullName.invalid && fullName.touched) {
       <div class="alert alert-danger">Name is required</div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        name="email"
+        [(ngModel)]="model.email"
+        required
+        value=""
+        #email="ngModel"
+        id="email"
+      />
+
+      @if (email.invalid && email.touched) {
+      <div class="alert alert-danger">Email is required</div>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="email">Phone</label>
+      <input
+        type="tel"
+        name="phone"
+        [(ngModel)]="model.phone"
+        placeholder="Phone number"
+        value=""
+        #phone="ngModel"
+        id="phone"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="comment">Comment</label>
+      <textarea
+        id="comment"
+        name="comment"
+        [(ngModel)]="model.comment"
+        required
+        #comment="ngModel"
+      ></textarea>
+      @if (comment.invalid && comment.touched) {
+      <div class="alert alert-danger">Comment is required</div>
       }
     </div>
 
