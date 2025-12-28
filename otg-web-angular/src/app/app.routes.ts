@@ -1,3 +1,4 @@
+import { AdminComponent } from './page/admin/admin.component';
 import { Routes } from '@angular/router';
 import { isUserAuthenticatedCanMatchGuard } from './is-user-authenticated-can-match-guard';
 
@@ -46,6 +47,10 @@ export const routes: Routes = [
   {
     path: 'contact',
     loadComponent: () => import('./page/contact/contact.component').then((m) => m.ContactComponent),
+  },
+  {
+    path: 'admin',
+    loadComponent: () => import('./page/admin/admin.component').then((m) => m.AdminComponent),
   },
   {
     path: '**',
