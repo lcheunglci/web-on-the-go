@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-admin',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './admin.component.scss',
 })
 export class AdminComponent {
-
+  user = input.required<User>();
 }

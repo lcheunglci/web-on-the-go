@@ -1,1 +1,13 @@
-<p>admin works!</p>
+<section class="main-content">
+  <div class="contact-wrapper">
+    <div class="form-wrapper">
+      @let authUser = user();
+      <h3>Congratulations {{ authUser.name }} Are an Admin!</h3>
+      <p>There really aren't any special admin features yet.</p>
+      <p>Your permissions include:</p>
+      @for(permission of authUser?.permissions; track permission) {
+      <p class="permission">{{ permission }}</p>
+      }
+    </div>
+  </div>
+</section>
