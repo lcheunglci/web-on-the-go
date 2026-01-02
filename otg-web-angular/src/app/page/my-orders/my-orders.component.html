@@ -1,7 +1,7 @@
 <h1>My Orders</h1>
 <ul class="order-list">
   @for (order of orderService.orders(); track order.id) {
-  <li>{{ order.date }} - {{ order.description }} - {{ order.total }}</li>
+  <li>{{ order.date }} - {{ order.status }} - {{ order.description }} - {{ order.total }}</li>
 
   }
 </ul>

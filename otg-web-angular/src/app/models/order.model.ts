@@ -4,4 +4,5 @@ export interface Order {
   items: Record<string, { quantity: number }>;
   date: string;
   total: number;
+  status: string;
 }
