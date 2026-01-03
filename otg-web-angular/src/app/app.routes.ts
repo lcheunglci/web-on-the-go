@@ -1,4 +1,3 @@
-import { AdminComponent } from './page/admin/admin.component';
 import { Routes } from '@angular/router';
 import { isUserAuthenticatedCanMatchGuard } from './is-user-authenticated-can-match-guard';
 
@@ -43,6 +42,14 @@ export const routes: Routes = [
     canMatch: [isUserAuthenticatedCanMatchGuard],
     loadComponent: () =>
       import('./page/my-orders/my-orders.component').then((m) => m.MyOrdersComponent),
+  },
+  {
+    path: 'my-orders/:id',
+    canMatch: [isUserAuthenticatedCanMatchGuard],
+    loadComponent: () =>
+      import('./page/my-orders/order-detail/order-detail.component').then(
+        (m) => m.OrderDetailComponent
+      ),
   },
   {
     path: 'contact',
