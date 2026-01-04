@@ -1,7 +1,12 @@
 export interface Order {
   id: string;
   description: string;
-  items: Record<string, { quantity: number }>;
+  items: {
+    productId: string;
+    productName: string;
+    quantity: number;
+    price: number;
+  }[];
   date: string;
   total: number;
   status: string;

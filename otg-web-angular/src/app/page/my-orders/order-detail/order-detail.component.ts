@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
+import { Order } from '../../../models/order.model';
 
 @Component({
   selector: 'app-order-detail',
@@ -7,5 +8,5 @@ import { Component } from '@angular/core';
   styleUrl: './order-detail.component.scss',
 })
 export class OrderDetailComponent {
-
+  protected order = input<Order | undefined>(undefined);
 }

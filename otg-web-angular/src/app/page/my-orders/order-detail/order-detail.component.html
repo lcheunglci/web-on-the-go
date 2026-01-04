@@ -1,1 +1,12 @@
-<p>order-detail works!</p>
+@let o = order(); @if (o) {
+<h1>Order #{{ o.id }}</h1>
+<p>{{ o.description }}</p>
+<ul>
+  @for (item of o.items; track item.productId) {
+  <li>{{ item.productName }} - {{ item.price }} x {{ item.quantity }}</li>
+  }
+</ul>
+} @else {
+<h1>No order</h1>
+<p>No order was specified.</p>
+}
