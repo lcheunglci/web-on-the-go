@@ -1,0 +1,11 @@
+<!-- uses the bootstrap typeahead and filters the my orders and provides results in the type ahead and when the user clicks on one of the results, it will open the order details page -->
+<!-- uses will be able to search by the cart item name, date or specific total range -->
+<label for="typeahead-format">Search for a order:</label>
+<input
+  id="typeahead-format"
+  type="text"
+  class="form-control"
+  [(ngModel)]="model"
+  [ngbTypeahead]="search"
+  [resultFormatter]="formatter"
+/>
